@@ -28,6 +28,8 @@ const getData = async () => {
 
   return (
     <div className="bg-[url('/src/assets/red.jpg')] bg-cover text-slate-100">
+    <div>
+
       <Routes>
         <Route path="/pin" element={<PinedData />} />
         <Route path="/" element={<Main />}>
@@ -35,6 +37,7 @@ const getData = async () => {
           <Route path="/weather" element={<Weather />} />
         </Route>
       </Routes>
+    </div>
     </div>
   );
 }

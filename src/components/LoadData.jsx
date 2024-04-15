@@ -125,95 +125,98 @@ const LoadData = () => {
 
 
   return (
-    data && <div className="2xl:w-[	1536px] xl:w-[1280px] lg:w-[1024px] md:w-[768px] sm:w-[	640px] h-[100vh] ">
-      <h1 className="text-[40px] font-bold flex justify-center pt-[20px]">
-        Weather Report
-      </h1>
-      <div className=" w-[99%] flex justify-between items-center ml-[15px] p-[20px]">
-        <button
-          className="px-[20px] py-1 hover:bg-orange-600 bg-orange-800 rounded-md"
-          onClick={handleAllLocations}
-        >
-          Number of Citys {count}
-        </button>
-        <div className="flex w-[300px] gap-[30px]">
-          <input
-            className=" rounded-md p-1 text-black"
-            type="text"
-            value={search}
-            placeholder="search city"
-            onChange={(e) => setSearch(e.target.value)}
-          />
+    data && (
+      <div className=" h-[100vh]  md:w-[80%]">
+        <h1 className="text-[40px] font-bold flex justify-center pt-[20px]">
+          Weather Report
+        </h1>
+        <div className=" w-[99%] gap-2 flex justify-between items-center ml-[15px] p-[20px] md:flex-row flex-col">
           <button
-            className="px-[20px] py-1 hover:bg-orange-600 bg-orange-800 rounded-md"
-            onClick={handleSearch}
+            className="px-[20px]  py-1 hover:bg-orange-600 bg-orange-800 rounded-md"
+            onClick={handleAllLocations}
           >
-            search
+            Number of Citys {count}
           </button>
-        </div>
-      </div>
-      <div className="flex justify-around items-center w-[99%] h-[50px] mb-3 min-w-[440px] overflow-scroll-x">
-        <div className="flex justify-around items-center w-[90%]">
-          <div
-            className="flex items-center w-[150px]"
-            // onClick={handleGeonameid}
-          >
-            Geoname_Id
-          </div>
-          <div
-            className="flex items-center w-[250px] cursor-pointer"
-            onClick={handleCityName}
-          >
-            City_Name <FaSort />
-          </div>
-          <div
-            className="flex items-center w-[150px] cursor-pointer"
-            onClick={handleCountryName}
-          >
-            Country_Name <FaSort />
-          </div>
-          <div
-            className="flex items-center w-[250px] cursor-pointer"
-            onClick={handleTimezone}
-          >
-            TimeZone <FaSort />
-          </div>
-        </div>
-        <div className="flex items-center justify-center w-[100px]">
-          Add to Fav
-        </div>
-      </div>
-      <div className="w-[100%] h-[70vh] min-w-[440px] overflow-scroll-x">
-        {data && <AutoSizer>
-          {({ height, width }) => (
-            <List
-              width={width}
-              height={height}
-              rowHeight={50}
-              rowCount={data?.length}
-              rowRenderer={({ index, key, style, parent }) => {
-                const d = data[index];
-                return (
-                  <div
-                    key={d.geoname_id}
-                    style={style}
-                    onClick={(e) => setLocation(d)}
-                    className={`hover:bg-orange-800  ${
-                      index % 2 == 0 && "bg-orange-700"
-                    }`}
-                  >
-                    <DatadisplayCard data={d} />
-
-                    <div></div>
-                  </div>
-                );
-              }}
+          <div className="flex  w-[300px] gap-[30px]">
+            <input
+              className=" rounded-md p-1 text-black"
+              type="text"
+              value={search}
+              placeholder="search city"
+              onChange={(e) => setSearch(e.target.value)}
             />
+            <button
+              className="px-[20px] py-1 hover:bg-orange-600 bg-orange-800 rounded-md"
+              onClick={handleSearch}
+            >
+              search
+            </button>
+          </div>
+        </div>
+        <div className="flex justify-around items-center w-[99%] h-[50px] mb-3 lg:text-[1rem] md:text-[.85rem] sm:text-[.75rem] text-[.8rem]">
+          <div className="flex justify-around items-center w-[90%]">
+            <div
+              className="flex items-center w-[150px]"
+              // onClick={handleGeonameid}
+            >
+              Geoname_Id
+            </div>
+            <div
+              className="flex items-center w-[250px] cursor-pointer"
+              onClick={handleCityName}
+            >
+              City_Name <FaSort />
+            </div>
+            <div
+              className="flex items-center w-[150px] cursor-pointer"
+              onClick={handleCountryName}
+            >
+              Country_Name <FaSort />
+            </div>
+            <div
+              className="flex items-center w-[250px] cursor-pointer"
+              onClick={handleTimezone}
+            >
+              TimeZone <FaSort />
+            </div>
+          </div>
+          <div className="flex items-center justify-center w-[100px]">
+            Add to Fav
+          </div>
+        </div>
+        <div className="w-[100%] h-[70vh]  overflow-scroll-x">
+          {data && (
+            <AutoSizer>
+              {({ height, width }) => (
+                <List
+                  width={width}
+                  height={height}
+                  rowHeight={50}
+                  rowCount={data?.length}
+                  rowRenderer={({ index, key, style, parent }) => {
+                    const d = data[index];
+                    return (
+                      <div
+                        key={d.geoname_id}
+                        style={style}
+                        onClick={(e) => setLocation(d)}
+                        className={`hover:bg-orange-800  ${
+                          index % 2 == 0 && "bg-orange-700"
+                        }`}
+                      >
+                        <DatadisplayCard data={d} />
+
+                        <div></div>
+                      </div>
+                    );
+                  }}
+                />
+              )}
+            </AutoSizer>
           )}
-        </AutoSizer>}
+        </div>
       </div>
-      
-    </div>
+    )
   );
 }
 

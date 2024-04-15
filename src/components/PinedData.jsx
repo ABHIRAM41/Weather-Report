@@ -34,7 +34,7 @@ const PinedData = () => {
 
    }
   return (
-    <div className="flex justify-center mb-[80px] mt-1">
+    <div className="flex justify-center mb-[80px] h-[100vh] md:items-start items-center mt-1">
       <div className="flex flex-col gap-1 ">
         <h1 className="text-[20px] font-semibold w-[150px] my-[10px]">
           Fav Locations
