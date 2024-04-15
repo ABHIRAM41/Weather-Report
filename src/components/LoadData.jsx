@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import ldata from './LocationData.json';
+// import ldata from './LocationData.json';
 import DatadisplayCard from './Displaycard/DatadisplayCard'
 import List from "react-virtualized/dist/commonjs/List";
 import AutoSizer from "react-virtualized/dist/commonjs/AutoSizer";
@@ -8,11 +8,12 @@ import { DataState } from "./config/ContextApi";
 import { FaSort } from "react-icons/fa";
 
 const LoadData = () => {
+    const { setLocation, ldata } = DataState();
     const [data, setData] = useState(ldata);
     const [count, setCount] = useState(data.length);
     const [c, setC] = useState(0);
     const [search,setSearch]=useState("");
-    const { setLocation } = DataState();
+    
     const handleWholeData=()=>{
       // setCount(count+1);
       console.log(count);
