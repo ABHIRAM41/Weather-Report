@@ -49,6 +49,7 @@ const DataProvider=({children})=>{
       cod: 200,
     });
     const [pinedData,setPinedData]=useState([]);
+    const [storedData,setStoredData]=useState(JSON.parse(localStorage.getItem("location")));
 
     return (
       <dataContext.Provider
@@ -61,6 +62,8 @@ const DataProvider=({children})=>{
           setLData,
           c1,
           setC1,
+          storedData,
+          setStoredData,
         }}
       >
         {children}

@@ -2,12 +2,13 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { DataState } from '../config/ContextApi';
 const DatadisplayCard = ({data}) => {
-  const { pinedData, setPinedData } = DataState();
+  const { pinedData, setPinedData, storedData, setStoredData } = DataState();
   const handleAddToFav=()=>{
     console.log(pinedData.length)
      if(pinedData.length==0){
       const pindata=[...pinedData,data]
       setPinedData(pindata);
+      setStoredData(pindata);
       localStorage.setItem("location", JSON.stringify(pindata));
       console.log('31');
       console.log(pinedData);
@@ -21,6 +22,7 @@ const DatadisplayCard = ({data}) => {
      }
      const pindata = [...pinedData, data];
      setPinedData( pindata);
+     setStoredData(pindata);
      localStorage.setItem("location", JSON.stringify(pindata));
      console.log("9864532");
      console.log(pinedData);
