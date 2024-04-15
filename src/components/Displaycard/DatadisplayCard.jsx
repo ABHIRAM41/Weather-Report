@@ -4,7 +4,6 @@ import { DataState } from '../config/ContextApi';
 const DatadisplayCard = ({data}) => {
   const { pinedData, setPinedData, storedData, setStoredData } = DataState();
   const handleAddToFav=()=>{
-    console.log(pinedData.length)
      if(pinedData.length==0){
       const pindata=[...pinedData,data]
       setPinedData(pindata);

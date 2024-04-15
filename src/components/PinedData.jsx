@@ -8,8 +8,8 @@ const PinedData = () => {
   //  const [count,setCount]=useState(0);
    const navigate=useNavigate();
     const displaydata=()=>{
-      if(storedData.length!=0 && storedData!=null) {
-        const locationdata=JSON.parse(localStorage.getItem("location"));
+      if (storedData != null && storedData.length) {
+        const locationdata = JSON.parse(localStorage.getItem("location"));
         console.log(locationdata);
         setPinedData(locationdata);
       }
@@ -39,26 +39,27 @@ const PinedData = () => {
         <h1 className="text-[20px] font-semibold w-[150px] my-[10px]">
           Fav Locations
         </h1>
-        {(storedData.length!=0 && storedData!=null) && pinedData?.map((data, index) => (
-          <div key={data.geoname_id} className="flex gap-2">
-            <div
-              className={`cursor-pointer ${
-                index % 2 == 0 && "bg-orange-800"
-              } hover:bg-orange-600 p-[5px] rounded-md`}
-              onClick={() => handleLocation(data)}
-            >
-              {data.name}
+        {(storedData != null && storedData.length) != 0 &&
+          pinedData?.map((data, index) => (
+            <div key={data.geoname_id} className="flex gap-2">
+              <div
+                className={`cursor-pointer ${
+                  index % 2 == 0 && "bg-orange-800"
+                } hover:bg-orange-600 p-[5px] rounded-md`}
+                onClick={() => handleLocation(data)}
+              >
+                {data.name}
+              </div>
+              <div
+                className={`flex items-center justify-center cursor-pointer text-[20px] ${
+                  index % 2 == 0 && "bg-orange-800"
+                } hover:bg-orange-600 px-[5px] rounded-md`}
+                onClick={() => handleDeletion(data)}
+              >
+                -
+              </div>
             </div>
-            <div
-              className={`flex items-center justify-center cursor-pointer text-[20px] ${
-                index % 2 == 0 && "bg-orange-800"
-              } hover:bg-orange-600 px-[5px] rounded-md`}
-              onClick={() => handleDeletion(data)}
-            >
-              -
-            </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );
