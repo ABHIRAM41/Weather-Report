@@ -28,7 +28,6 @@ const getData = async () => {
 
   return (
     <div className="bg-[url('/src/assets/red.jpg')] bg-cover text-slate-100">
-    {/* {ldata[0]?.name} */}
       <Routes>
         <Route path="/pin" element={<PinedData />} />
         <Route path="/" element={<Main />}>

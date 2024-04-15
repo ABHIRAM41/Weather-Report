@@ -34,7 +34,7 @@ const PinedData = () => {
     <div className='flex justify-center mb-[80px] mt-1'>
       <div className="flex flex-col gap-1 ">
         <h1 className="text-[20px] font-semibold w-[150px] my-[10px]">Fav Locations</h1>
-        {pinedData.map((data, index) => (
+        {pinedData?.map((data, index) => (
           <div key={data.geoname_id} className="flex gap-2">
             <div
               className={`cursor-pointer ${

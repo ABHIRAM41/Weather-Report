@@ -9,8 +9,8 @@ import { FaSort } from "react-icons/fa";
 
 const LoadData = () => {
     const { setLocation, ldata,c1 } = DataState();
-    const [data, setData] = useState(ldata);
-    const [count, setCount] = useState(ldata.length);
+    const [data, setData] = useState();
+    const [count, setCount] = useState(0);
     const [c, setC] = useState(0);
     const [search,setSearch]=useState("");
     
@@ -184,7 +184,7 @@ const LoadData = () => {
         </div>
       </div>
       <div className="w-[100%] h-[70vh] min-w-[440px] overflow-scroll-x">
-        <AutoSizer>
+        {data && <AutoSizer>
           {({ height, width }) => (
             <List
               width={width}
@@ -210,7 +210,7 @@ const LoadData = () => {
               }}
             />
           )}
-        </AutoSizer>
+        </AutoSizer>}
       </div>
       
     </div>
