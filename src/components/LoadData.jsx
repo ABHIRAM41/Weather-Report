@@ -125,7 +125,7 @@ const LoadData = () => {
 
 
   return (
-    <div className="2xl:w-[	1536px] xl:w-[1280px] lg:w-[1024px] md:w-[768px] sm:w-[	640px] h-[100vh] ">
+    data && <div className="2xl:w-[	1536px] xl:w-[1280px] lg:w-[1024px] md:w-[768px] sm:w-[	640px] h-[100vh] ">
       <h1 className="text-[40px] font-bold flex justify-center pt-[20px]">
         Weather Report
       </h1>
@@ -212,11 +212,7 @@ const LoadData = () => {
           )}
         </AutoSizer>
       </div>
-      {/* {data?.map((d) => (
-        <div key={d.geoname_id}>
-          <DatadisplayCard data={d}/>
-        </div>
-      ))} */}
+      
     </div>
   );
 }
