@@ -130,14 +130,14 @@ const LoadData = () => {
         <h1 className="text-[40px] font-bold flex justify-center pt-[20px]">
           Weather Report
         </h1>
-        <div className=" w-[99%] gap-2 flex justify-between items-center ml-[15px] p-[20px] md:flex-row flex-col">
+        <div className=" w-[99%] gap-4 flex justify-between items-center md:ml-[15px] p-[20px] md:flex-row flex-col">
           <button
             className="px-[20px]  py-1 hover:bg-orange-600 bg-orange-800 rounded-md"
             onClick={handleAllLocations}
           >
             Number of Citys {count}
           </button>
-          <div className="flex  w-[300px] gap-[30px]">
+          <div className="flex sm:flex-row flex-col  md:w-[300px] w-[200px] gap-[10px]">
             <input
               className=" rounded-md p-1 text-black"
               type="text"
