@@ -1,11 +1,9 @@
-import {createContext, useContext,useState} from "react";
-import d1 from '../jsonfile/data1.json'
-import d2 from "../jsonfile/data2.json";
-import d3 from "../jsonfile/data3.json";
+import {createContext, useContext,useRef,useState} from "react";
 const dataContext=createContext();
 
 const DataProvider=({children})=>{
-    const [ldata,setLData]=useState([...d1,...d2,...d3]);
+    const [ldata,setLData]=useState([]);
+    const [c1, setC1] = useState(1);
     const [location, setLocation] = useState({
       coord: {
         lon: 68.3737,
@@ -61,6 +59,8 @@ const DataProvider=({children})=>{
           setPinedData,
           ldata,
           setLData,
+          c1,
+          setC1,
         }}
       >
         {children}

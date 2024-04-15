@@ -8,19 +8,21 @@ import { DataState } from "./config/ContextApi";
 import { FaSort } from "react-icons/fa";
 
 const LoadData = () => {
-    const { setLocation, ldata } = DataState();
+    const { setLocation, ldata,c1 } = DataState();
     const [data, setData] = useState(ldata);
-    const [count, setCount] = useState(data.length);
+    const [count, setCount] = useState(ldata.length);
     const [c, setC] = useState(0);
     const [search,setSearch]=useState("");
     
     const handleWholeData=()=>{
       // setCount(count+1);
+      setCount(ldata.length);
+      setData(ldata);
       console.log(count);
     }
     useEffect(()=>{
       handleWholeData();
-    },[c])
+    },[c,c1])
 
     // sorting geoname_id
     // const handleGeonameid=()=>{
