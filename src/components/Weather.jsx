@@ -58,7 +58,7 @@ const Weather = () => {
   };
 
   return (
-    <div className="flex flex-col gap-[30px] h-[100vh] pt-[20px] w-[60%]">
+    <div className="flex flex-col gap-[30px] h-[100vh] pt-[20px] w-[100%]">
       <h2 className="text-[40px] font-bold flex justify-center ">
         <NavLink to='/'>
         Weather Report
