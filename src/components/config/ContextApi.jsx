@@ -1,6 +1,5 @@
 import {createContext, useContext,useRef,useState} from "react";
 const dataContext=createContext();
-
 const DataProvider=({children})=>{
     const [ldata,setLData]=useState([]);
     const [c1, setC1] = useState(1);
