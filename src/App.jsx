@@ -5,11 +5,11 @@ import Weather from './components/Weather';
 import PinedData from './components/PinedData';
 import Main from './components/Main';
 import { DataState } from './components/config/ContextApi';
-import { useEffect,useState } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 function App() {
 const { ldata, setLData,c1, setC1 } = DataState();
-const [locationdata,setl]=useState();
+
 
 
 
