@@ -14,8 +14,10 @@ const Weather = () => {
   const getData=async()=>{
     console.log(location);
     try{
-      const {data} = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${location.name}&appid=c8b6fb8ba03efeb1c88cde68a059a2a0`
+      const { data } = await axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${
+          location.name
+        }&appid=${import.meta.env.VITE_Weather_API_KEY}`
       );
       setLocationData(data);
       // console.log(locationData, locationData?.weather[0].icon[2]);
